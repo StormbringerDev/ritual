@@ -2,23 +2,23 @@
 add_library(ritual STATIC)
 
 target_sources(ritual
-    PRIVATE
-        # Core
-        src/core/log.cpp
-        # Platform
-        # src/platform/window.cpp
-        # Renderer
-        # src/renderer/opengl/context.cpp
-        # Scripting
-        # src/scripting/cantrip_host.cpp
+  PRIVATE
+    # Core
+    src/core/log.cpp
+    # Platform
+    # src/platform/window.cpp
+    # Renderer
+    # src/renderer/opengl/context.cpp
+    # Scripting
+    # src/scripting/cantrip_host.cpp
 )
 
 target_include_directories(ritual
-    PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        $<INSTALL_INTERFACE:include>
-    PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/src
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+  PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 # Dependencies
@@ -28,9 +28,9 @@ target_include_directories(ritual
 
 # Warnings
 if(MSVC)
-    target_compile_options(ritual PRIVATE /W4 /permissive-)
+  target_compile_options(ritual PRIVATE /W4 /permissive-)
 else()
-    target_compile_options(ritual PRIVATE -Wall -Wextra -Wpedantic -Wshadow)
+  target_compile_options(ritual PRIVATE -Wall -Wextra -Wpedantic -Wshadow)
 endif()
 
 # Alias for cleaner usage
