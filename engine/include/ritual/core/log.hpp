@@ -2,7 +2,7 @@
 
 namespace ritual {
 
-    void log_info(const char *msg);
-    void log_error(const char *msg);
+void log_info(const char *msg);
+void log_error(const char *msg);
 
 } // namespace ritual
