@@ -23,9 +23,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 add_subdirectory(engine)
 
 # Examples
-# if(RITUAL_BUILD_EXAMPLES)
-#     add_subdirectory(examples)
-# endif()
+if(RITUAL_BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
 
 # Cantrip build (for later)
 # add_custom_target(cantrip-runtime
