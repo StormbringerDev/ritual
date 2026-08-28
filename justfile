@@ -7,21 +7,23 @@ default:
 
 # Configure + build (Debug)
 configure:
-    cmake -B build -G Ninja \
-      -DCMAKE_BUILD_TYPE=Debug \
-      -DCMAKE_TOOLCHAIN_FILE="{{env('VCPKG_ROOT')}}/scripts/buildsystems/vcpkg.cmake"
+    cmake --preset dev
 
 build: configure
-    cmake --build build
+    cmake --build --preset dev
 
 # Release build
 release:
-    cmake -B build-release -G Ninja -DCMAKE_BUILD_TYPE=Release
-    cmake --build build-release
+    cmake --preset rel
+    cmake --build --preset rel
+
+# Run tests
+test: build
+    ctest --preset dev
 
 # Run a specific example (e.g. just run 01_hello_window)
 run name:
-    ./build/bin/{{name}}
+    ./build/dev/bin/{{name}}
 
 # Clean
 clean:

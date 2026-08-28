@@ -1,4 +1,10 @@
 cmake_minimum_required(VERSION 3.21)
+
+option(RITUAL_BUILD_TESTS "Build unit tests" OFF)
+if(RITUAL_BUILD_TESTS)
+  list(APPEND VCPKG_MANIFEST_FEATURES "testing")
+endif()
+
 project(Ritual
   VERSION 0.1.0
   LANGUAGES CXX C
@@ -10,18 +16,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Options
 option(RITUAL_BUILD_DEV_APPS "Build development applications" ON)
 option(RITUAL_BUILD_EDITOR "Build ritual editor" OFF)
-option(RITUAL_BUILD_TESTS "Build unit tests" OFF)
 
-# Output directories
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
-# Engine library
-add_subdirectory(engine)
+if(RITUAL_BUILD_TESTS)
+  enable_testing()
+endif()
 
-# Applications
+add_subdirectory(engine)
 add_subdirectory(apps)

@@ -5,7 +5,7 @@
   "dependencies": ["glfw3", "glad"],
   "features": {
     "testing": {
-      "description": "Test dependencies",
+      "description": "Unit test dependencies",
       "dependencies": ["gtest"]
     }
   }
