@@ -1,0 +1,3 @@
+[submodule "cantrip"]
+	path = cantrip
+	url = git@github.com:StormbringerDev/cantrip.git

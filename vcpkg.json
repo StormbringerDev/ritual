@@ -1,0 +1,12 @@
+{
+  "name": "ritual",
+  "version-string": "0.1.0",
+  "description": "Ritual game engine",
+  "dependencies": ["glfw3", "glad"],
+  "features": {
+    "testing": {
+      "description": "Test dependencies",
+      "dependencies": ["gtest"]
+    }
+  }
+}
