@@ -3,6 +3,7 @@ add_library(ritual STATIC)
 target_sources(ritual
   PRIVATE
   src/core/log.cpp
+  src/platform/window.cpp
 )
 
 target_include_directories(ritual

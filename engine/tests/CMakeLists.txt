@@ -2,6 +2,7 @@ find_package(GTest CONFIG REQUIRED)
 
 add_executable(ritual-tests
   test_log.cpp
+  test_window.cpp
 )
 
 target_link_libraries(ritual-tests PRIVATE
