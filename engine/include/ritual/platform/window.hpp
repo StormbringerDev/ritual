@@ -17,7 +17,6 @@ public:
   ~Window();
 
   void swap_buffers();
-  void poll_events();
   bool should_close() const;
 
   void make_current() const;

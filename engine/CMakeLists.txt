@@ -4,6 +4,7 @@ target_sources(ritual
   PRIVATE
   src/core/log.cpp
   src/platform/window.cpp
+  src/platform/platform.cpp
 )
 
 target_include_directories(ritual
