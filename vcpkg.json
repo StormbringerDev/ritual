@@ -1,0 +1,17 @@
+{
+  "name": "ritual",
+  "version": "0.1.0",
+  "dependencies": [
+    {
+      "name": "glfw3",
+      "features": ["wayland"]
+    },
+    "glad"
+  ],
+  "features": {
+    "tests": {
+      "description": "Unit testing with GTest",
+      "dependencies": ["gtest"]
+    }
+  }
+}
